@@ -1,0 +1,20 @@
+server:
+  port: 8082
+
+spring:
+  application:
+    name: springCloudEurekaServer
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://master1:8080/eureka/  #,http://master3:8083/eureka/
+  instance:
+    #心跳间隔时间，默认30秒
+    leaseRenewalIntervalInSeconds: 3
+    #心跳超时时间
+    leaseExpirationDurationInSeconds: 9
+    prefer-ip-address: true
+    appname: master2
